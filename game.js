@@ -16,13 +16,6 @@ $(document).keypress(function () {
     }
 },
 
-$(document).on('touchstart', function () {
-    if (!start) {
-        nextSequence();
-        start = true;
-    }
-}),
-
 
    
 )
