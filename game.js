@@ -9,7 +9,7 @@ var level = 0;
 
 var start = false;
 
-$(document).keypress(function () {
+$(document).click(function () {
     if(!start){
         nextSequence();
         start = true;
