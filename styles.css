@@ -1,6 +1,10 @@
 body {
   text-align: center;
   background-color: #011F3F;
+  /* display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center; */
 }
 
 #level-title {
@@ -52,10 +56,38 @@ body {
   background-color: grey;
 }
 
-@media(max-width: 1105px) {
+@media(max-width: 1124px) {
   .container {
-    display: block;
+    /* display: block; */
     width: 100%;
-    margin: auto;
+    margin: 0;
   }
+
+  html,body {
+    text-align: center;
+    background-color: #011F3F;
+   display: flex;
+   flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
 }
+
+/* @media (min-width:1108px) {
+  html,body {
+    text-align: center;
+    background-color: #011F3F;
+    height: 100%;
+    width: 100%;
+  }
+
+  .bigC{
+    width: 100%;
+  }
+
+  .row{
+    width: 100%;
+  }
+} */
