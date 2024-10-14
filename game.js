@@ -9,16 +9,19 @@ var level = 0;
 
 var start = false;
 
-$(document).click(function () {
-    if(!start){
+// $(document).click(function () {
+//     if(!start){
+//         nextSequence();
+//         start = true;
+//     }
+// })
+
+$(document).on("click touchstart", function () {
+    if (!start) {
         nextSequence();
         start = true;
     }
-},
-
-
-   
-)
+});
 
 $('.btn').click(function (event) {
     var userChosenColour = event.target.id;
