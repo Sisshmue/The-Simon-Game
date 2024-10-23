@@ -10,7 +10,7 @@ body {
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
-  margin:  5%;
+  /* margin:  5%; */
   color: #FEF2BF;
 }
 
@@ -19,6 +19,34 @@ body {
   width: 50%;
   margin: auto;
 
+}
+
+.start{
+  display: inline-block;
+  height: max-content;
+  width: max-content;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  /* border: 3px solid black; */
+  /* border-radius: 5%; */
+  background-color:  #FEF2BF; 
+  padding: 10px;
+}
+
+.retry{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: inline-block;
+  height: max-content;
+  width: max-content;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  border: 5px solid black;
+   border-radius: 5%;
+  background-color:  #FEF2BF; 
+  padding: 10px;
 }
 
 .btn {

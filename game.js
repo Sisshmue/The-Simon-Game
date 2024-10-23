@@ -8,18 +8,33 @@ var userClickedPattern = [];
 var level = 0;
 
 var start = false;
+var gameOver = false;
 
-// $(document).click(function () {
-//     if(!start){
+// $(document).keypress(function() {
+//     if (!start) {
+//       $("#level-title").text("Level " + level);
+//       nextSequence();
+//       start = true;
+//     }
+//   });
+  
+
+// $(document).on("click touchstart", function () {
+//     if (!start && !gameOver) {
 //         nextSequence();
 //         start = true;
+//         gameOver = false;
 //     }
-// })
+// });
 
-$(document).on("click touchstart", function () {
-    if (!start) {
+$('.retry').hide();
+
+$('.start').click(function(){
+    if (!start && !gameOver) {
         nextSequence();
         start = true;
+        gameOver = false;
+       
     }
 });
 
@@ -71,16 +86,30 @@ function checkAnswer(currentLevel) {
     }else{
        playSound('wrong');
        $('body').addClass('game-over');
-       setTimeout(()=>{
-        $('body').removeClass('game-over')
+       console.log("Game Over triggered");
+       $("#level-title").html('Game Over, Press <div type="button" class="retry"><span style="color:#011F3F;">Retry</span> </div> Button to Restart');
+       console.log($("#level-title").text());
+       setTimeout(function(){
+        $('body').removeClass('game-over');
        },200);
-       $('h1').text('Game Over, Press Any Key to Restart');
-       startOver();
+      
+       gameOver = true;
+       $('.retry').show();
+
     }
 }
+
+$(document).on('click', '.retry', function() {
+    startOver(); // Call the startOver function when retry button is clicked
+});
 
 function startOver() {
     gamePattern = [];
     level =0;
     start = false;
+    gameOver = false;
+    $('.retry').hide();  // Hide the retry button after the game restarts
+    $("#level-title").text('Level ' + level);  // Reset the level title
+    nextSequence();  // Start a new game
+    
 }
